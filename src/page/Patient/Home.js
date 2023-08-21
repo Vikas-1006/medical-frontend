@@ -26,7 +26,7 @@ function Home() {
 
 
   useEffect(() => {
-    const newSocket = io('https://medical-backend-k3wp2hx6r-vikas-1006.vercel.app/'); // socket connect
+    const newSocket = io(`${process.env.REACT_APP_API_URL}/`); // socket connect
     setSocket(newSocket);
     getOnlineDoc(newSocket, setOnlineDoc, type, search); // get online doctor
     fetchSpecialization(setSpec); // get specialization

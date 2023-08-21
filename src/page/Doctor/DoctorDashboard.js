@@ -26,7 +26,7 @@ const DoctorDashboard = () => {
   console.log(mr);
 
   useEffect(() => {
-    const newSocket = io('https://medical-backend-k3wp2hx6r-vikas-1006.vercel.app/');
+    const newSocket = io(`${process.env.REACT_APP_API_URL}/`);
     if (state.data) {
       fetchMR(setMr, state.data.id);
       setSocket(newSocket); // set doctor socket
