@@ -25,13 +25,16 @@ const DoctorInfo = ({match}) => {
     setSocket(newSocket);
     getOnlineDoc(newSocket, setOnlineDoc, setFetchFail); // get list of avaliable doctor
     newSocket.on('availableCall', (status) => { // listen for doctor to answer call
+      console.log("inside newSocket")
       if (status) {
+        console.log("status= ",status)
         newSocket.disconnect();
         history.push({
           pathname: `/call/${match.params.id}`,
           state: {type: 'patient', user: 'Not a doctor'},
         });
       } else {
+         console.log("no status as status= ",status)
         setFetchFail(true);
       }
     });
