@@ -20,7 +20,7 @@ const DoctorInfo = ({match}) => {
   const {state} = useFetchUser(); // User data
 
   useEffect(() => {
-    const newSocket = io('localhost:5000/'); // connect socket
+    const newSocket = io('https://medical-backend-k3wp2hx6r-vikas-1006.vercel.app/'); // connect socket
     setSocket(newSocket);
     getOnlineDoc(newSocket, setOnlineDoc, setFetchFail); // get list of avaliable doctor
     newSocket.on('availableCall', (status) => { // listen for doctor to answer call
