@@ -145,7 +145,7 @@ const fetchDoctorData = (doctorId, setOnlineDoc, type, search) => {
   const fetchDoctor = async () => {
     try {
       let res = await Axios.get(
-        `http://localhost:5000/api/v1/doctor/${id}`,
+        `${process.env.BASE_URL}/api/v1/doctor/${id}`,
         {
           headers: {
             'x-acess-token': localStorage.getItem('token'),
@@ -200,7 +200,7 @@ const disconnectSocket = (socket) => {
 const fetchSpecialization = (setSpec) => {
   const fetchType = async () => {
     try {
-      let res = await Axios.get(`http://localhost:5000/api/v1/specialization/`);
+      let res = await Axios.get(`${process.env.BASE_URL}/api/v1/specialization/`);
       let data = res.data.data;
 
       if (!Array.isArray(data)) {

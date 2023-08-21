@@ -103,7 +103,7 @@ const fetchDoctor = (setStaff) => {
   const fetchData = async () => {
     try {
       let res = await Axios.get(
-        `http://localhost:5000/api/v1/staff/?sort=name`,
+        `${process.env.BASE_URL}/api/v1/staff/?sort=name`,
         {
           headers: {
             'x-acess-token': localStorage.getItem('token'),

@@ -48,7 +48,7 @@ const AddMR = () => {
     e.preventDefault();
     console.log(bodyParameters)
     Axios.post(
-      `http://localhost:5000/api/v1/medicalRecord/`,
+      `${process.env.BASE_URL}/api/v1/medicalRecord/`,
       bodyParameters,
       config
     )

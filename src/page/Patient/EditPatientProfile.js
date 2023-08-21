@@ -57,7 +57,7 @@ const EditPatientProfile = () => {
     e.preventDefault();
     axios
       .put(
-        `http://localhost:5000/api/v1/patient/${data.id}`,
+        `${process.env.BASE_URL}/api/v1/patient/${data.id}`,
         bodyParameters,
         config
       )
