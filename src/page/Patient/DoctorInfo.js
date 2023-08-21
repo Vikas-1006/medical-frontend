@@ -219,6 +219,7 @@ const getOnlineDoc = (socket, setOnlineDoc, setFetchFail) => {
       setOnlineDoc(doctor);
     }
     console.log(doctor);
+    console.log(Object.keys(doctor).length);
     if (Object.keys(doctor).length === 0) {
       setFetchFail(true);
     }
