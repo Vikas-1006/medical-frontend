@@ -47,13 +47,13 @@ export const useFetchUser = () => {
   // fetch data from API
   const fetchUser = async (setState) => {
     try {
-      let res = await Axios.get(`${process.env.BASE_URL}/api/v1/auth/`, {
+      let res = await Axios.get(`${process.env.REACT_APP_API_URL}/api/v1/auth/`, {
         headers: {
           'x-acess-token': localStorage.getItem('token'),
         },
       });
       let type = res.data.type
-      res = await Axios.get(`${process.env.BASE_URL}/api/v1/${type}/${res.data.id}`, {
+      res = await Axios.get(`${process.env.REACT_APP_API_URL}/api/v1/${type}/${res.data.id}`, {
         headers: {
           'x-acess-token': localStorage.getItem('token'),
         },

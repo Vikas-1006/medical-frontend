@@ -42,7 +42,7 @@ const EditStaffProfile = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     Axios.put(
-      `${process.env.BASE_URL}/api/v1/staff/${data.id}`,
+      `${process.env.REACT_APP_API_URL}/api/v1/staff/${data.id}`,
       bodyParameters,
       config
     )

@@ -57,7 +57,7 @@ const EditPatientProfile = () => {
     e.preventDefault();
     axios
       .put(
-        `${process.env.BASE_URL}/api/v1/patient/${data.id}`,
+        `${process.env.REACT_APP_API_URL}/api/v1/patient/${data.id}`,
         bodyParameters,
         config
       )

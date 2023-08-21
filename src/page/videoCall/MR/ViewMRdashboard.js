@@ -126,7 +126,7 @@ const fetchMR = (setMr, id) => {
   const fetchData = async () => {
     try {
       let res = await Axios.get(
-        `${process.env.BASE_URL}/api/v1/medicalRecord/?sort=-date&patient=${id}`,
+        `${process.env.REACT_APP_API_URL}/api/v1/medicalRecord/?sort=-date&patient=${id}`,
         {
           headers: {
             'x-acess-token': localStorage.getItem('token'),
@@ -158,7 +158,7 @@ const fetchPatient = (setPatient, id) => {
   const fetchData = async () => {
     try {
       let res = await Axios.get(
-        `${process.env.BASE_URL}/api/v1/patient/${id}`,
+        `${process.env.REACT_APP_API_URL}/api/v1/patient/${id}`,
         {
           headers: {
             'x-acess-token': localStorage.getItem('token'),

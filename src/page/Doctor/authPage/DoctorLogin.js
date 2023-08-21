@@ -19,7 +19,7 @@ const DoctorLogin = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     axios
-      .post(`${process.env.BASE_URL}/api/v1/doctor/login`, {
+      .post(`${process.env.REACT_APP_API_URL}/api/v1/doctor/login`, {
         email: email,
         password: password,
       })

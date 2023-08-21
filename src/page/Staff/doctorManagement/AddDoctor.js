@@ -59,7 +59,7 @@ const AddDoctor = () => {
       setError("Password Doesn't match");
     } else {
     e.preventDefault();
-    Axios.post(`${process.env.BASE_URL}/api/v1/doctor/`, formData, config)
+    Axios.post(`${process.env.REACT_APP_API_URL}/api/v1/doctor/`, formData, config)
       .then((res) => {
         return res.data;
       })
@@ -268,7 +268,7 @@ const AddDoctor = () => {
 const fetchSpecialization = (setSpec) => {
   const fetchType = async () => {
     try {
-      let res = await Axios.get(`${process.env.BASE_URL}/api/v1/specialization/`);
+      let res = await Axios.get(`${process.env.REACT_APP_API_URL}/api/v1/specialization/`);
       let data = res.data.data;
 
       if (!Array.isArray(data)) {

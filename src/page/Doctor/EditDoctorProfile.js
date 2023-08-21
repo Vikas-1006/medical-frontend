@@ -43,7 +43,7 @@ const EditDoctorProfile = () => {
 
     e.preventDefault();
     Axios.put(
-      `${process.env.BASE_URL}/api/v1/doctor/${data.id}`,
+      `${process.env.REACT_APP_API_URL}/api/v1/doctor/${data.id}`,
       formData,
       config
     )

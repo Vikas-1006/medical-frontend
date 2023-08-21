@@ -20,7 +20,7 @@ const UserLogin = () => {
     e.preventDefault();
     console.log(email,password);
     axios
-      .post(`${process.env.BASE_URL}/api/v1/patient/login`, {
+      .post(`${process.env.REACT_APP_API_URL}/api/v1/patient/login`, {
         email: email,
         password: password,
       })

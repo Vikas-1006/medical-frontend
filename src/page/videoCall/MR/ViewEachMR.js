@@ -34,7 +34,7 @@ const ViewEachMR = ({match}) => {
   const handleDelete = async (e) => {
     e.preventDefault();
     Axios.delete(
-      `${process.env.BASE_URL}/api/v1/medicalRecord/${Mr.data.id}`,
+      `${process.env.REACT_APP_API_URL}/api/v1/medicalRecord/${Mr.data.id}`,
       config
     )
       .then(() => {
@@ -222,7 +222,7 @@ const fetchMR = (setMr, id) => {
   const fetchData = async () => {
     try {
       let res = await Axios.get(
-        `${process.env.BASE_URL}/api/v1/medicalRecord/${id}`,
+        `${process.env.REACT_APP_API_URL}/api/v1/medicalRecord/${id}`,
         {
           headers: {
             'x-acess-token': localStorage.getItem('token'),

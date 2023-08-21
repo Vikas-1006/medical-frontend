@@ -33,7 +33,7 @@ const PatientRegister = () => {
     e.preventDefault();
     console.log(validation());
     axios
-      .post(`${process.env.BASE_URL}/api/v1/patient/register`, {
+      .post(`${process.env.REACT_APP_API_URL}/api/v1/patient/register`, {
         name: name,
         email: email,
         password: password,

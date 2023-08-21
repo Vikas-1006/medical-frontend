@@ -33,7 +33,7 @@ const EachDoctor = ({match}) => {
   const handleDelete = async (e) => {
     e.preventDefault();
     Axios.delete(
-      `${process.env.BASE_URL}/api/v1/doctor/${match.params.id}`,
+      `${process.env.REACT_APP_API_URL}/api/v1/doctor/${match.params.id}`,
       config
     )
       .then(() => {
@@ -208,7 +208,7 @@ const EachDoctor = ({match}) => {
 const fetchDoctor = (setDoctor, id) => {
   const fetchData = async () => {
     try {
-      let res = await Axios.get(`${process.env.BASE_URL}/api/v1/doctor/${id}`, {
+      let res = await Axios.get(`${process.env.REACT_APP_API_URL}/api/v1/doctor/${id}`, {
         headers: {
           'x-acess-token': localStorage.getItem('token'),
         },
