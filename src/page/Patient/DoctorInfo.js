@@ -10,6 +10,7 @@ import VideoCameraIcon from '../../img/video-camera.png';
 import {useFetchUser} from '../../context/userContext';
 
 const DoctorInfo = ({match}) => {
+  console.log("match= ",match)
   const [socket, setSocket] = useState(null); // socket.io
   const [onlineDoc, setOnlineDoc] = useState(null); // doctor information
   const [fetchFail, setFetchFail] = useState(false); // condition of fectching doctor data
@@ -51,6 +52,7 @@ const DoctorInfo = ({match}) => {
   // call doctor
   const callDoctor = () => {
     if (!fetchFail) {
+      console.log("call doc paramid= ",match.params)
       let socketList = onlineDoc[match.params.id];
       socketList.forEach((socketId) => {
         socket.emit('call', socketId, {
